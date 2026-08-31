@@ -14,10 +14,10 @@ CUBIC C1은 새로운 로봇 프로젝트를 시작할 때마다 차체, 구동�
 
 | 구분                  | 경로                                                                                                 | 내용                                  |
 | ------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| **프로젝트 개요**         | [`docs/01_Project overview/`](./docs/01_Project%20overview/)                                       | 개발 배경 · 목표 · 시스템 구성 · 역할 및 일정       |
-| **기구 설계**           | [`docs/02_Architect/01_Mechanical Integration/`](./docs/02_Architect/01_Mechanical%20Integration/) | 프레임 · 모듈 장착 · 기구 통합                 |
-| **전기 설계**           | [`docs/02_Architect/02_Eletrical/`](./docs/02_Architect/02_Eletrical/)                             | 전원 · 제어기 · 센서 · 결선                  |
-| **소프트웨어 구조**        | [`docs/02_Architect/03_Software/`](./docs/02_Architect/03_Software/)                               | ROS 2 · 하위 제어 · 통신 구조               |
+| **프로젝트 개요**         | [`docs/01_Project overview/`](./docs/01_Project%20Overview/)                                       | 개발 배경 · 목표 · 시스템 구성 · 역할 및 일정       |
+| **기구 설계**           | [`docs/02_Architecture/01_Mechanical%20Integration/`](./docs/02_Architecture/01_Mechanical%20Integration/) | 프레임 · 모듈 장착 · 기구 통합                 |
+| **전기 설계**           | [`docs/02_Architecture/02_Electrical/`](./docs/02_Architecture/02_Electrical/)                             | 전원 · 제어기 · 센서 · 결선                  |
+| **소프트웨어 구조**        | [`docs/02_Architecture/03_Software/`](./docs/02_Architecture/03_Software/)                               | ROS 2 · 하위 제어 · 통신 구조               |
 | **ROS 2 Workspace** | [`cubic_ws/`](./cubic_ws/)                                                                         | Bring-up · SLAM · EKF · Nav2 · Maps |
 | **MCU Firmware**    | [`firmware/`](./firmware/)                                                                         | Motor Controller · Power Controller |
 | **System Services** | [`systemd/`](./systemd/)                                                                           | 부팅 및 ROS 2 systemd 서비스              |
