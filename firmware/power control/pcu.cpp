@@ -89,18 +89,6 @@ constexpr uint32_t LOW_VOLTAGE_CONFIRM_MS = 500;
 constexpr float ADC_REF_V = 3.3f;
 constexpr float ADC_MAX   = 4095.0f;
 
-/*
- * 중요:
- *
- * 이 값은 실제 3.3 V 구동 WCS 센서를
- * 알려진 부하 전류로 실측한 뒤 수정.
- *
- * 예:
- * sensitivity = abs(Vload - Vzero) / known_current
- *
- * 아래 0.050 V/A는 임시값.
- */
-
 constexpr float WCS_SENSITIVITY_V_PER_A = 0.050f;
 
 constexpr float WCS_CURRENT_GAIN = 1.000f;
