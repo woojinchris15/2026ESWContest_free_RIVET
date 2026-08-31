@@ -16,7 +16,7 @@ CUBIC의 전장 시스템은 **상위 제어기(SBC), 하위 제어기(MCU/PCU),
 | IMU         | BNO055          | UART           | 자세 및 각속도 측정         |
 | Front LiDAR | RPLIDAR C1      | USB            | 전방 거리 측정            |
 | Rear LiDAR  | RPLIDAR C1      | USB            | 후방 거리 측정            |
-| Motor ×2    | DC Geared Motor | PWM / DIR / FG | 좌·우 독립 구동           |
+| Motor ×2    | BLDC Geared Motor | PWM / DIR / FG | 좌·우 독립 구동           |
 
 ---
 
