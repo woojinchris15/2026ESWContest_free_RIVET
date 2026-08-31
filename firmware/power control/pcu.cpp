@@ -512,13 +512,6 @@ static float current_from_voltage(
 
     current *= WCS_CURRENT_GAIN;
 
-    /*
-     * WCS 설치 방향에 따라 부호가 반대로 나오면
-     * 여기서:
-     *
-     * current = -current;
-     */
-
     if (fabsf(current) < CURRENT_DEADBAND_A)
         current = 0.0f;
 
@@ -642,13 +635,6 @@ static void core1_main()
     // --------------------------------------------------------
 
     status.current_zero_v = calibrate_current_zero();
-
-    /*
-     * 3.3V 구동 Hall current sensor라면
-     * 영점은 보통 전원 중앙 부근에 위치.
-     *
-     * 너무 극단적인 값이면 센서/배선 fault.
-     */
     if (
         status.current_zero_v < 0.5f ||
         status.current_zero_v > 2.8f
@@ -857,15 +843,8 @@ static void core1_main()
         // WCS DOUT
         // ----------------------------------------------------
 
-        /*
-         * DOUT polarity는 사용하는 WCS 보드 회로에 따라
-         * 달라질 수 있으므로 실제 테스트 후 조건 수정.
-         *
-         * 현재는 HIGH = fault라고 가정하지 않고
-         * raw monitoring만 남겨둔다.
-         */
 
-        // bool current_digital = gpio_get(CR_DOUT_PIN);
+        bool current_digital = gpio_get(CR_DOUT_PIN);
 
         // ----------------------------------------------------
         // LOW VOLTAGE debounce
