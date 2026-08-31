@@ -1,0 +1,16 @@
+[Unit]
+Description=CUBIC EKF Odometry Filter
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=cubic
+
+ExecStart=/bin/bash -lc 'source /opt/ros/jazzy/setup.bash && source /home/cubic/cubic_ws/install/setup.bash && exec ros2 run robot_localization ekf_node --ros-args --params-file /home/cubic/cubic_ws/src/cubic_navigation/config/ekf.yaml'
+
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=CUBIC Foxglove Bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=cubic
+ExecStart=/bin/bash -lc 'source /opt/ros/jazzy/setup.bash && source /home/cubic/cubic_ws/install/setup.bash && exec ros2 launch foxglove_bridge foxglove_bridge_launch.xml'
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

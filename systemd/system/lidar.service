@@ -1,0 +1,15 @@
+[Unit]
+Description=CUBIC LiDAR
+After=multi-user.target
+
+[Service]
+Type=simple
+User=cubic
+WorkingDirectory=/home/cubic/cubic_ws
+ExecStart=/bin/bash -lc 'source /opt/ros/jazzy/setup.bash && source /home/cubic/cubic_ws/install/setup.bash && ros2 launch cubic_bringup lidar.launch.py'
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
+

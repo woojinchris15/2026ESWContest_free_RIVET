@@ -1,0 +1,16 @@
+[Unit]
+Description=CUBIC SLAM Toolbox
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=cubic
+
+ExecStart=/bin/bash -lc 'source /opt/ros/jazzy/setup.bash && source /home/cubic/cubic_ws/install/setup.bash && exec ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/cubic/cubic_ws/src/cubic_navigation/config/slam.yaml'
+
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

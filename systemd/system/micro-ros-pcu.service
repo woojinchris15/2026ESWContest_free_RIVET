@@ -1,0 +1,13 @@
+[Unit]
+Description=CUBIC PCU micro-ROS Agent
+After=multi-user.target
+
+[Service]
+Type=simple
+User=cubic
+ExecStart=/bin/bash -lc 'source /opt/ros/jazzy/setup.bash && source /home/cubic/microros_ws/install/local_setup.bash && ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyAMA3 --baudrate 115200'
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

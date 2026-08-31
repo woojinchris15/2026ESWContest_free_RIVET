@@ -1,0 +1,20 @@
+[Unit]
+Description=CUBIC Nav2 Localization
+After=network-online.target
+Wants=network-online.target
+Conflicts=cubic-slam.service
+
+[Service]
+Type=simple
+User=cubic
+Environment=HOME=/home/cubic
+WorkingDirectory=/home/cubic
+
+ExecStart=/bin/bash -lc 'source /opt/ros/jazzy/setup.bash && source /home/cubic/cubic_ws/install/setup.bash && exec ros2 launch nav2_bringup localization_launch.py map:=/home/cubic/cubic_ws/src/cubic_navigation/maps/cubic_map.yaml params_file:=/home/cubic/cubic_ws/src/cubic_navigation/config/nav2_params.yaml use_sim_time:=False autostart:=True'
+
+KillSignal=SIGINT
+TimeoutStopSec=8
+
+Restart=on-failure
+RestartSec=2
+

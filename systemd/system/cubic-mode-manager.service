@@ -1,0 +1,18 @@
+[Unit]
+Description=CUBIC Mode Manager
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=cubic
+Environment=HOME=/home/cubic
+WorkingDirectory=/home/cubic
+
+ExecStart=/bin/bash -lc 'source /opt/ros/jazzy/setup.bash && source /home/cubic/cubic_ws/install/setup.bash && exec ros2 run cubic_bringup mode_manager'
+
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

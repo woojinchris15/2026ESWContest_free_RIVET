@@ -1,0 +1,16 @@
+[Unit]
+Description=CUBIC MCU micro-ROS Agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=cubic
+
+ExecStart=/bin/bash -lc 'source /opt/ros/jazzy/setup.bash && source /home/cubic/microros_ws/install/local_setup.bash && exec ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyAMA0 -b 921600'
+
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
