@@ -35,7 +35,7 @@
 * micro-ROS 통신
 
 > Core 분리, FG 처리, Motor Control 및 Power Management의 상세 구조는
-> [`하위제어 상세설명`](../docs/02_Architect/03_Software/하위제어%20상세설명.md)을 참고한다.
+> [`하위제어 상세설명`](../docs/02_Architecture/03_Software/하위제어%20상세설명.md)을 참고한다.
 
 ---
 
@@ -143,16 +143,16 @@ MCU와 PCU는 UART 기반 micro-ROS Transport를 사용하며, Raspberry Pi에�
 ## 📚 관련 문서
 
 * 하위 제어 구조 및 알고리즘
-  → [`하위제어 상세설명`](../docs/02_Architect/03_Software/하위제어%20상세설명.md)
+  → [`하위제어 상세설명`](../docs/02_Architecture/03_Software/하위제어%20상세설명.md)
 
 * ROS 2 Topic 및 통신 구조
-  → [`ROS 2 Integration`](../docs/02_Architect/03_Software/ROS%202%20Integration.md)
+  → [`ROS 2 Integration`](../docs/02_Architecture/03_Software/ROS%202%20Integration.md)
 
 * 개발 과정의 문제 분석 및 해결
   → [`문제해결 및 트러블슈팅`](../docs/04_Test/문제해결%20및%20트러블슈팅.md)
 
 * UART, 센서 및 제어기 핀맵 / 결선 정보
-  → [`Electrical Architecture`](../docs/02_Architect/02_Eletrical/README.md)
+  → [`Electrical Architecture`](../docs/02_Architecture/02_Electrical/README.md)
 ---
 
 > ROS 2 기반 상위 제어 소프트웨어는 [`../cubic_ws/`](../cubic_ws/)를 참고한다.

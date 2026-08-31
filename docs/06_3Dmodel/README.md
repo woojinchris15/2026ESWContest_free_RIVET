@@ -3,7 +3,7 @@
 `06_3Dmodel`은 CUBIC C1의 **전체 조립 모델, 개별 설계 부품 및 렌더 이미지**를 포함한다.
 
 기구 구조와 장착 방식에 대한 상세 설명은
-[`Mechanical Integration`](../02_Architect/01_Mechanical%20Integration/Mechanical%20Integration.md)을 참고한다.
+[`Mechanical Integration`](../02_Architecture/01_Mechanical%20Integration/Mechanical%20Integration.md)을 참고한다.
 
 ---
 
@@ -62,4 +62,4 @@ render/render.png
 ---
 
 > 전체 기구 구조, 상단 모듈 장착 방식 및 외부 인터페이스에 대한 설명은
-> [`Mechanical Integration`](../02_Architect/01_Mechanical%20Integration/Mechanical%20Integration.md)을 참고한다.
+> [`Mechanical Integration`](../02_Architecture/01_Mechanical%20Integration/Mechanical%20Integration.md)을 참고한다.

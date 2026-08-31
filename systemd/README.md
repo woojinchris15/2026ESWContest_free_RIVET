@@ -57,7 +57,7 @@ Utility
 Mapping과 Navigation에 필요한 구성 요소는 운용 목적에 따라 선택적으로 실행한다.
 
 > ROS 2 전체 소프트웨어 구조 및 Mode 전환 방식은
-> [`ROS 2 Integration`](../docs/02_Architect/03_Software/ROS%202%20Integration.md)을 참고한다.
+> [`ROS 2 Integration`](../docs/02_Architecture/03_Software/ROS%202%20Integration.md)을 참고한다.
 
 ---
 
@@ -246,7 +246,7 @@ cubic-mode-manager.service
 ## 📚 관련 문서
 
 * ROS 2 전체 구조 및 Topic
-  → [`ROS 2 Integration`](../docs/02_Architect/03_Software/ROS%202%20Integration.md)
+  → [`ROS 2 Integration`](../docs/02_Architecture/03_Software/ROS%202%20Integration.md)
 
 * ROS 2 Workspace 구성
   → [`../cubic_ws/README.md`](../cubic_ws/README.md)
@@ -255,7 +255,7 @@ cubic-mode-manager.service
   → [`../firmware/README.md`](../firmware/README.md)
 
 * UART, 센서 및 제어기 핀맵 / 결선 정보
-  → [`Electrical Architecture`](../docs/02_Architect/02_Eletrical/README.md)
+  → [`Electrical Architecture`](../docs/02_Architecture/02_Eletrical/README.md)
 
 * 개발 중 발생한 서비스 및 통신 문제
   → [`문제해결 및 트러블슈팅`](../docs/04_Test/문제해결%20및%20트러블슈팅.md)

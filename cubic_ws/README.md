@@ -183,8 +183,8 @@ ros2 launch cubic_navigation navigation_full.launch.py
 
 ROS 2 노드, Topic, TF 및 전체 소프트웨어 구조에 대한 자세한 설명은 다음 문서를 참고한다.
 
-* [`ROS 2 Integration`](../docs/02_Architect/03_Software/ROS%202%20Integration.md)
-* [`하위제어 상세설명`](../docs/02_Architect/03_Software/하위제어%20상세설명.md)
+* [`ROS 2 Integration`](../docs/02_Architecture/03_Software/ROS%202%20Integration.md)
+* [`하위제어 상세설명`](../docs/02_Architecture/03_Software/하위제어%20상세설명.md)
 * [`문제해결 및 트러블슈팅`](../docs/04_Test/문제해결%20및%20트러블슈팅.md)
 
 하위 실시간 제어 펌웨어는 [`../firmware/`](../firmware/)에 구성되어 있다.
