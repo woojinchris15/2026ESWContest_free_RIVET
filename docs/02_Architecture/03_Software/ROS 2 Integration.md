@@ -18,6 +18,7 @@ CUBIC의 상위 소프트웨어는 Raspberry Pi 5에서 **ROS 2 Jazzy**를 기�
 | `/power/fault`     | 전원부 이상 상태         |
 | `/tf`              | 로봇 및 센서 좌표계 변환    |
 | `/system/alert_ok` | 시스템 상태 알림         |
+| `/odometry/filtered` | Wheel Odometry와 IMU를 EKF로 융합한 Odometry |
 
 ---
 
@@ -35,6 +36,7 @@ CUBIC의 상위 소프트웨어는 Raspberry Pi 5에서 **ROS 2 Jazzy**를 기�
 | AMCL                       | 저장된 지도 기반 위치 추정               |
 | Nav2                       | 경로 계획 및 주행 명령 생성              |
 | Foxglove Bridge            | 외부 모니터링 및 제어 인터페이스 제공         |
+| EKF (`robot_localization`) | Wheel Odometry와 IMU 회전 정보를 융합하여 `odom → base_link` 생성 |
 
 ---
 
@@ -62,28 +64,42 @@ Power Controller ── /power/battery
 ## 4. Navigation Data Flow
 
 ```text
-        /scan
-          │
-          ├─────────────┐
-          │             │
-        /odom       /bno055/imu
-          │             │
-          └──────┬──────┘
-                 ▼
-        Localization / SLAM
-                 │
-                 ▼
-               Nav2
-                 │
-              /cmd_vel
-                 │
-                 ▼
-        Motor Controller
+Motor FG
+   │
+   ▼
+/odom ───────────────┐
+                     │
+                     ▼
+                   EKF
+                     ▲
+                     │
+BNO055 ─ /bno055/imu ┘
+                     │
+                     ├─ /odometry/filtered
+                     └─ odom → base_link
+                              │
+                              ▼
+/scan ─────────── Localization / SLAM
+                              │
+                              ▼
+                            Nav2
+                              │
+                          /cmd_vel
+                              │
+                              ▼
+                     Motor Controller
 ```
 
-Mapping Mode에서는 `/scan`과 Odometry 데이터를 SLAM Toolbox에서 사용하여 지도를 생성한다.
+Motor Controller에서 생성한 `/odom`은 FG 기반 Wheel Odometry로, 로봇의 기본적인 이동량과 회전량을 제공한다.
 
-Navigation Mode에서는 저장된 지도와 센서 데이터를 기반으로 AMCL이 현재 위치를 추정하고, Nav2가 목적지까지의 경로를 계산하여 `/cmd_vel`을 생성한다.
+BNO055의 `yaw` 및 `angular velocity`는 EKF에 추가로 융합되어 Wheel Odometry의 **회전 방향 오차와 누적 heading drift를 보정**한다. IMU는 Wheel Odometry를 대체하는 것이 아니라 회전 추정을 보완하는 센서로 사용된다.
+
+EKF는 `/odometry/filtered`와 `odom → base_link` TF를 생성하며, 이를 기반으로 상위 Localization 및 Navigation 계층에서 로봇의 자세를 사용한다.
+
+Mapping Mode에서는 통합 LiDAR 데이터 `/scan`과 Odometry 정보를 SLAM Toolbox에서 사용하여 지도를 생성한다.
+
+Navigation Mode에서는 저장된 지도와 센서 데이터를 기반으로 AMCL이 `map → odom` 위치 관계를 추정하고, Nav2가 현재 Pose와 주변 장애물 정보를 이용하여 목적지까지의 경로 및 `/cmd_vel`을 생성한다.
+
 
 ---
 
