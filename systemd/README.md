@@ -232,4 +232,4 @@ cubic-mode-manager.service
   → [`Electrical Architecture`](../docs/02_Architecture/02_Electrical/README.md)
 
 - 문제 해결 및 시스템 검증  
-  → [`04_Test`](../docs/04_Test/README.md)
+  → [`04_Test`](../docs/04_Test/)
