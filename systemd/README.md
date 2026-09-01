@@ -12,17 +12,17 @@
 
 | Service                      | 역할                                |
 | ---------------------------- | --------------------------------- |
-| `micro-ros-mcu.service`      | Motor Controller용 micro-ROS Agent |
-| `micro-ros-pcu.service`      | Power Controller용 micro-ROS Agent |
-| `bno055.service`             | BNO055 IMU Node 실행                |
-| `lidar.service`              | Front / Rear LiDAR 실행             |
-| `cubic-ekf.service`          | Wheel Odometry + IMU 기반 EKF       |
-| `cubic-slam.service`         | SLAM Toolbox 기반 Mapping           |
-| `cubic-localization.service` | 저장된 Map 기반 Localization           |
-| `cubic-navigation.service`   | Nav2 Navigation                   |
-| `cubic-mode-manager.service` | Mapping / Navigation Mode 관리      |
-| `foxglove.service`           | Foxglove Bridge                   |
-| `x1208-shutdown.service`     | X1208 UPS Shutdown 처리             |
+| [`micro-ros-mcu.service`](./system/micro-ros-mcu.service)      | Motor Controller용 micro-ROS Agent |
+| [`micro-ros-pcu.service`](./system/micro-ros-pcu.service)      | Power Controller용 micro-ROS Agent |
+| [`bno055.service`](./system/bno055.service)             | BNO055 IMU Node 실행                |
+| [`lidar.service`](./system/lidar.service)              | Front / Rear LiDAR 실행             |
+| [`cubic-ekf.service`](./system/cubic-ekf.service)          | Wheel Odometry + IMU 기반 EKF       |
+| [`cubic-slam.service`](./system/cubic-slam.service)         | SLAM Toolbox 기반 Mapping           |
+| [`cubic-localization.service`](./system/cubic-localization.service) | 저장된 Map 기반 Localization           |
+| [`cubic-navigation.service`](./system/cubic-navigation.service)   | Nav2 Navigation                   |
+| [`cubic-mode-manager.service`](./system/cubic-mode-manager.service) | Mapping / Navigation Mode 관리      |
+| [`foxglove.service`](./system/foxglove.service)           | Foxglove Bridge                   |
+| [`x1208-shutdown.service`](./system/x1208-shutdown.service)     | X1208 UPS Shutdown 처리             |
 
 ---
 
@@ -255,7 +255,7 @@ cubic-mode-manager.service
   → [`../firmware/README.md`](../firmware/README.md)
 
 * UART, 센서 및 제어기 핀맵 / 결선 정보
-  → [`Electrical Architecture`](../docs/02_Architecture/02_Eletrical/README.md)
+  → [`Electrical Architecture`](../docs/02_Architecture/02_Electrical/README.md)
 
 * 개발 중 발생한 서비스 및 통신 문제
   → [`문제해결 및 트러블슈팅`](../docs/04_Test/문제해결%20및%20트러블슈팅.md)

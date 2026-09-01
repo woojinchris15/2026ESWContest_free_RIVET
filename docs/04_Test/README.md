@@ -23,7 +23,7 @@ RP2350 ADC와 Software Hysteresis를 적용하였다.
 - 100% Duty: **0.32%**
 - 80% Duty: **0.12%**
 
-상세 내용은 `FG_Test.md`에 정리하였다.
+상세 내용은 [`FG_Test.md`](./FG_Test.md)에 정리하였다.
 
 ---
 
@@ -58,7 +58,7 @@ PWM 입력에 10 kΩ Pull-down을 추가하여 비정상 구동 가능성을 줄
 PWM 감속 제어와 LiDAR 기반 위치 보정을 사용하였으며,
 IMU 가속도 보정은 지도 정합을 악화시키는 경우가 있어 최종 구성에서 제외하였다.
 
-실제 반복 주행 결과는 `Drive_Test.md`에 기록하였다.
+실제 반복 주행 결과는 [`Drive_Test.md`](./Drive_Test.md)에 기록하였다.
 
 ---
 
@@ -102,13 +102,13 @@ ROS 2 Topic 생성 여부를 기준으로 시스템 준비 상태를 확인하�
 
 | 문서 | 내용 |
 |---|---|
-| `FG_Test.md` | FG 역설계 및 ADC + Hysteresis 검증 |
-| `Drive_Test.md` | 직선 반복 주행 및 목표점 보정 |
-| `Nav2_Test.md` | 장애물 재계획 및 Localization 교란 |
-| `Safety_Test.md` | E-stop 및 통신 단절 Fail-Safe |
-| `System_Integration_Test.md` | Bring-up, ROS 2, Ethernet, XT60 |
+| [`FG_Test.md`](./FG_Test.md) | FG 역설계 및 ADC + Hysteresis 검증 |
+| [`Drive_Test.md`](./Drive_Test.md) | 직선 반복 주행 및 목표점 보정 |
+| [`Nav2_Test.md`](./Nav2_Test.md) | 장애물 재계획 및 Localization 교란 |
+| [`Safety_Test.md`](./Safety_Test.md) | E-stop 및 통신 단절 Fail-Safe |
+| [`System_Integration_Test.md`](./System_Integration_Test.md) | Bring-up, ROS 2, Ethernet, XT60 |
 
-시험 이미지와 캡처 자료는 `pic/`에 정리하였다.
+시험 이미지와 캡처 자료는 [`pic/`](./pic/)에 정리하였다.
 
 ---
 
