@@ -107,6 +107,7 @@ ROS 2 Topic 생성 여부를 기준으로 시스템 준비 상태를 확인하�
 | [`Nav2_Test.md`](./Nav2_Test.md) | 장애물 재계획 및 Localization 교란 |
 | [`Safety_Test.md`](./Safety_Test.md) | E-stop 및 통신 단절 Fail-Safe |
 | [`System_Integration_Test.md`](./System_Integration_Test.md) | Bring-up, ROS 2, Ethernet, XT60 |
+| [`mode_transition_validation.md`](./mode_transition_validation.md) | Mapping↔Navigation 전환 성능 및 안정성 검증 |
 
 시험 이미지와 캡처 자료는 [`pic/`](./pic/)에 정리하였다.
 
